@@ -1,0 +1,31 @@
+<template>
+    <lightning-card title="Account Data using Apex Wire">
+        <div class="slds-var-m-around_medium">
+            <template if:true={accounts.data}>
+                <template for:each={accounts.data} for:item="acc">
+                    <div class="slds-box slds-box_xx-small" key={acc.Id}>
+                        <p>Name: <strong>{acc.Name}</strong></p>
+                        <p>Type: <strong>{acc.Type}</strong></p>
+                        <p>Industry: <strong>{acc.Industry}</strong></p>
+                    </div>
+                </template>
+            </template>
+        </div>
+    </lightning-card>
+
+    <!-- Method 2  -->
+
+    <lightning-card title="Account Data using Apex Wire Modification">
+        <div class="slds-var-m-around_medium">
+            <template if:true={accountList}>
+                <template for:each={accountList} for:item="acc">
+                    <div class="slds-box slds-box_xx-small" key={acc.Id}>
+                        <p>Name: <strong>{acc.Name}</strong></p>
+                        <p>Type: <strong>{acc.newType}</strong></p>
+                        <p>Industry: <strong>{acc.Industry}</strong></p>
+                    </div>
+                </template>
+            </template>
+        </div>
+    </lightning-card>
+</template>
